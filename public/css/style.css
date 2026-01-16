@@ -4,7 +4,7 @@ body {
 }
 
 header {
-    background-image: url('public/img/Tavern.jpg');
+    background-image: url('../img/Tavern.jpg');
     opacity: 0.5;
     color: white;
     padding: 10px;
