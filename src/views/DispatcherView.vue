@@ -2,12 +2,39 @@
     <div id="orders">
       <div id="orderList">
         <div v-for="(order, key) in orders" v-bind:key="'order'+key">
-          #{{ key }}: {{ order.orderItems.join(", ") }}
+          <div>
+            <strong>#{{ key }}</strong>
+          </div>
+
+          <div>
+            <strong>Items:</strong>
+            <span v-if="Array.isArray(order.orderItems)">
+              {{ order.orderItems.join(", ") }}
+            </span>
+            <span v-else>
+              <template v-for="(amount, name) in order.orderItems" :key="name">
+                {{ name }} — {{ amount }}
+              </template>
+            </span>
+          </div>
+
+          <div v-if="order.customer">
+            <strong>Customer:</strong>
+            <div>{{ order.customer.fullName }}</div>
+            <div>{{ order.customer.email }}</div>
+            <div>{{ order.customer.payment }} — {{ order.customer.gender }}</div>
+          </div>
+
+          <div v-if="order.details">
+            <strong>Location:</strong> x: {{ order.details.x }}, y: {{ order.details.y }}
+          </div>
         </div>
         <button v-on:click="clearQueue">Clear Queue</button>
       </div>
       <div id="dots">
-          <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}" v-bind:key="'dots' + key">
+          <div v-for="(order, key) in orders"
+               v-bind:style="{ left: (order.details && order.details.x ? order.details.x : 0) + 'px', top: (order.details && order.details.y ? order.details.y : 0) + 'px'}"
+               v-bind:key="'dots' + key">
             {{ key }}
           </div>
       </div>
@@ -15,18 +42,19 @@
   </template>
   <script>
   import io from 'socket.io-client'
-  const socket = io("localhost:3000");
+  const socket = io("http://localhost:3000");
   
   export default {
     name: 'DispatcherView',
     data: function () {
       return {
-        orders: null,
+        orders: {},
       }
     },
     created: function () {
-      socket.on('currentQueue', data =>
-        this.orders = data.orders);
+      socket.on('currentQueue', data => {
+        this.orders = data && data.orders ? data.orders : {};
+      });
     },
     methods: {
       clearQueue: function () {
@@ -35,7 +63,7 @@
       changeStatus: function(orderId) {
         socket.emit('changeStatus', {orderId: orderId, status: "Annan status"});
 
-      }
+      },
     }
   }
   </script>
@@ -70,4 +98,3 @@
     text-align: center;
   }
   </style>
-  

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="public/css/style.css">
+    <meta charset="UTF-8">
+    <title>BurgerHeaven Online</title>
+    
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to BurgerHeaven Online</h1>
+
+        <h3>Select burger</h3>
+        <p>This is where you execute burger selection</p>
+    </header>
+    
+    <div class="burger-section">
+        <div class="burger-card" style="display: inline-block;">
+            <h3>The Fire Burger</h3>
+            <img src="public/img/fire_burger.jpg" alt="Fire Burger" width="300" height="200">
+            <ul>
+                <li>Kobe beef of the highest quality</li>
+                <li class="lactose">Covered in fancy cheese (contains lactose)</li>
+                <li class="lactose">Cold-leavened sourdough bread (contains gluten)</li>
+            </ul>
+        </div>
+
+
+        <div class="burger-card"style="display: inline-block;">
+            <h3>Fried Turkey Burger</h3>
+            <img src="public/img/turkey_burger.jpg" alt="Turkey Burger" width="300" height="200">
+            <ul>
+                <li>Deep fried Turkish turkey</li>
+                <li class="lactose"> A slice of pink stuff (contains lactose)</li>
+                <li>Shake-n-bake gluten-free bread</li>
+            </ul>
+        </div>
+
+        <div class="burger-card" style="display: inline-block;">
+            <h3>A Double w/ Cheese</h3>
+            <img src="public/img/dobule_cheese.jpg" alt="Double Cheese Burger" width="300" height="200">
+            <ul>
+                <li>Two layers of pure meat</li>
+                <li class="lactose"> Lots of yummy cheese (contains lactose)</li>
+                <li class="lactose">Sweet bread bun (contains gluten)</li>
+            </ul>
+        </div>
+    </div>
+
+    <main>
+    <section class="contact">
+        <h4>Customer Information</h4>
+        <p>This is where you provide necessary information</p>
+        <h4>Delivery Information:</h4>
+        <form>
+                <p>
+                    <label for="Full name">First</label><br>
+                    <input type="text" id="First- and Last name " name="fn" required="required" placeholder="Full name">
+                </p>
+                <p>
+                    <label for="E-mail">Last</label><br>
+                    <input type="text" id="E-mail address" name="ln" placeholder="E-mail">
+                </p>
+                <p>
+                    <label for="Street">Last</label><br>
+                    <input type="text" id="Street name" name="em" required="required" placeholder="Street">
+                </p>
+                <p>
+                    <label for="House">Last</label><br>
+                    <input type="number" id="House number" name="em" required="required" placeholder="House number">
+                </p>
+
+                <p>
+                    <label for="recipient">Payment options</label>
+                    <select id="recipient" name="rcp">
+                        <option>Debit card</option>
+                        <option>Credit card</option>
+                        <option>Klarna</option>
+                        <option>Apple pay</option>
+                    </select>
+                </p>
+
+                 <p>
+                    <input type="radio" id="Male " name="fn" required="required" placeholder="Gender" checked>
+                    <label for="<Gender">Female</label><br>
+                    
+                    <input type="radio" id="Female " name="fn" required="required" placeholder="Gender">
+                    <label for="<Gender">Male</label><br>
+
+                    <input type="radio" id="Non-binary " name="fn" required="required" placeholder="Gender">
+                    <label for="<Gender">Non-binary</label><br>
+
+                    <input type="radio" id="Other" name="fn" required="required" placeholder="Gender">
+                    <label for="<Gender">Other</label><br>
+
+                </p>    
+
+        </form>
+    </section><br>
+                <button type="submit">Submit Order
+                    <img src="public/img/send_orders.jpg" alt="Burger Icon" width="50" height="20">
+                </button>
+</main>
+
+    <hr>
+    <footer>
+        &copy; 2018 Hypothetical Burgers Inc.
+    </footer>
+</body>
+</html>
