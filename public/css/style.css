@@ -1,64 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap');
 body {
-    font-size: 12pt;
+    font-family: 'Times New Roman', Times, serif;
 }
-
-p {
-    color: red;
-}
-
-h1 {
-    font-family: 'Agbalumo';
-    font-size: 36pt;
-}
-main, header, footer, nav ul {
-    max-width: 40rem;
-    margin: 0 auto 0 auto;
-}
-main {
-    background-color: bisque;
-}
-
-/* nav ul li {
-    display: inline-block;
-    background-color: grey;
-    padding: 1em;
-    margin: 1em;
-} */
 
 header {
-    background-image: url("../img/polacks.jpg");
-    background-size: cover;
-    overflow: hidden;
-    width: 100%;
-    height: 200px;
+    background-image: url('public/img/Tavern.jpg');
     opacity: 0.5;
-}
-
-header h1 {
-    width:40rem;
-    margin: 0 auto;
+    color: white;
+    padding: 10px;
     text-align: center;
+    font-family: 'Cormorant', serif;
 }
 
-nav ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 9.25em);
-    gap: 1em;
-    padding: 0;
+
+.burger-section {
+    background-color: black;
+    color:white;
 }
 
-nav li {
-    display: block;
-    background-color: grey;
-    padding: 1em;
-}
 
-.Very-good {
-    color: green;
-}
-
-.Master {
-    color: green;
+.lactose {
+    color: darkorange;
     font-weight: bold;
+}
+
+button:hover {
+    background-color: darkgrey;
+    color: black;
+}
+
+button:active {
+    background-color: grey;
+    color: white;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    color: black;
+    border: 2px dashed black;
+    border-radius: 10px;
+    background-color: #f2f2f2;
 }
